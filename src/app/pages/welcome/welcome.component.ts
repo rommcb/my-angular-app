@@ -15,12 +15,11 @@ export class WelcomeComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.testService.getStuff().subscribe((res) => {
+    this.testService.getStuff()
+    .subscribe((res) => {
       console.log('res from welcome component', res)
-      this.getResult = res;
-    })
-  }
-
-
+      this.getResult = res.msg;
+      })
+    }
 
 }
